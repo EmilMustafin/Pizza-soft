@@ -1,0 +1,103 @@
+@use 'sass:map';
+@import '/src/app/styles/index';
+
+@mixin show-label {
+  gap: 4px;
+
+  label {
+    font-size: map.get($font-size, xs);
+    font-weight: map.get($font-weight, r);
+    line-height: map.get($line-height, xs);
+  }
+
+  input {
+    flex-basis: 100%;
+  }
+}
+
+@mixin font {
+  font-size: map.get($font-size, s);
+  font-weight: map.get($font-weight, m);
+  line-height: map.get($line-height, s);
+  color: $text_secondary;
+}
+
+.inputText {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 16px 24px;
+  color: $text_secondary;
+  caret-color: $text_action;
+  background-color: $bg_blocks;
+  border-radius: 8px;
+
+  @include font;
+
+  &.white,
+  &.white input {
+    background-color: $bg_primary;
+  }
+
+  label {
+    @include font;
+
+    cursor: text;
+
+    &.required::after {
+      color: $text_alert;
+      content: ' *';
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &.label {
+      input {
+        flex-basis: 0;
+      }
+
+      &.value {
+        @include show-label;
+      }
+    }
+  }
+
+  &.focus {
+    color: $text_primary;
+    outline: 1px solid $separator;
+    outline-offset: -1px;
+
+    .body {
+      &.label {
+        @include show-label;
+      }
+    }
+  }
+
+  &.isError {
+    outline: 1px solid $text_alert;
+    outline-offset: -1px;
+
+    &,
+    label {
+      color: $text_alert;
+    }
+  }
+
+  &.size-l {
+    height: 46px;
+    padding: 8px 24px;
+  }
+
+  &.size-s {
+    height: 56px;
+  }
+
+  &.size-m {
+    height: 72px;
+  }
+}

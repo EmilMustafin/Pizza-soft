@@ -1,0 +1,31 @@
+@import 'src/app/styles/index';
+
+.inputDate {
+  position: relative;
+
+  .isNotError {
+    cursor: pointer;
+    fill: $text_secondary;
+  }
+
+  .isError {
+    cursor: pointer;
+    fill: $text_alert;
+  }
+
+  .container {
+    position: absolute;
+    right: 0;
+    width: min-content;
+
+    .calendar {
+      max-width: 438px;
+      padding: 24px;
+      margin-top: 8px;
+      background-color: $bg_primary;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 15px 20px 0 rgb(0 0 0 / 5%);
+    }
+  }
+}

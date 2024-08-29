@@ -1,0 +1,258 @@
+@use 'sass:map';
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  background-color: $bg_blocks;
+  border: 1px solid;
+  border-color: $bg_blocks;
+  border-radius: $borderRadiusM;
+
+  &.white {
+    background-color: $bg_primary;
+    border-color: $bg_primary;
+  }
+
+  &.focus {
+    border-color: $separator;
+  }
+
+  &.error {
+    border-color: $separator_alert;
+  }
+
+  &:hover {
+    cursor: text;
+  }
+
+  &.l {
+    height: 46px;
+  }
+
+  &.s {
+    height: 56px;
+  }
+
+  &.m {
+    height: 72px;
+  }
+
+  &.svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :last-child {
+      right: 8px;
+    }
+  }
+}
+
+.label {
+  position: absolute;
+  left: 24px;
+
+  // при событии onInput исчезает лейбл
+  z-index: 1;
+  font-size: map.get($font-size, s);
+  font-weight: map.get($font-weight, m);
+  line-height: map.get($line-height, s);
+  color: $text_secondary;
+  text-align: left;
+  letter-spacing: 0;
+  transition: all 0.2s ease-in-out;
+
+  @include absoluteVerticalCenter;
+
+  &_required::after {
+    color: $text_alert;
+    content: ' *';
+  }
+
+  &.focus {
+    top: 34%;
+    font-size: map.get($font-size, xs);
+    font-weight: map.get($font-weight, r);
+  }
+
+  &.error {
+    color: $text_alert;
+  }
+
+  &:hover {
+    cursor: text;
+  }
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 40px 56px 16px 24px;
+  font-size: map.get($font-size, s);
+  font-weight: map.get($font-weight, m);
+  line-height: map.get($line-height, xs);
+  color: $text_secondary;
+  text-align: left;
+  letter-spacing: 0;
+  caret-color: $ctrl_Liberty;
+  background: none;
+  border: 0;
+  border-radius: $borderRadiusM;
+
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &:focus {
+    color: $text_primary;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $text_secondary;
+  }
+
+  &.error {
+    color: $text_alert;
+    caret-color: $separator_alert;
+  }
+
+  &.placeholdered {
+    padding: 28px 24px;
+  }
+
+  &.search {
+    &_m {
+      padding: 28px 24px 28px 56px;
+    }
+
+    &_s {
+      padding: 20px 24px 20px 56px;
+    }
+  }
+
+  &.sms {
+    font-size: map.get($font-size, l);
+    font-weight: map.get($font-weight, b);
+    line-height: map.get($line-height, l);
+    color: $text_primary;
+    text-align: center;
+  }
+
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &.paintedWIthDark {
+    &:disabled {
+      color: transparent;
+      background-color: $bg_input_disabled;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+}
+
+.buttonInput {
+  position: absolute;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+
+  @include absoluteVerticalCenter;
+
+  &.search {
+    right: unset;
+    left: 24px;
+  }
+
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelBox {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+
+  &.inputLabelWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    text-align: right;
+  }
+
+  &.placeholdered {
+    padding: 12px 24px;
+    text-align: right;
+  }
+
+  &.textAlign {
+    padding: 16px 24px;
+    text-align: left;
+  }
+
+  &.outerLabel {
+    position: relative;
+    margin-bottom: 24px;
+    font-size: map.get($font-size, s);
+    font-weight: map.get($font-weight, r);
+    line-height: map.get($line-height, xs);
+    letter-spacing: 0;
+  }
+
+  &.star {
+    position: absolute;
+    margin-left: 4px;
+    color: $text_alert;
+  }
+
+  .labelBoxError {
+    margin: 5px 0;
+    font-size: map.get($font-size, xs);
+    color: $text_alert;
+  }
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 99%;
+
+  svg {
+    position: absolute;
+  }
+}
+
+.readOnly {
+  cursor: default;
+
+  &:hover {
+    cursor: default;
+  }
+}

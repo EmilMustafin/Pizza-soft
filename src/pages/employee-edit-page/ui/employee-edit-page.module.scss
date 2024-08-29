@@ -1,0 +1,97 @@
+.container {
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin: 15px;
+}
+
+.label {
+  display: flex;
+  margin: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.label_archive {
+  margin-left: 7px;
+}
+
+.input,
+.select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.input:focus,
+.select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.formActions {
+  display: flex;
+  justify-content: center;
+}
+
+.back_button,
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+.button:disabled {
+  background-color: #ccc;
+}
+
+.spinnerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.notFound {
+  color: #e74c3c;
+  text-align: center;
+}
+
+@media (width <= 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
