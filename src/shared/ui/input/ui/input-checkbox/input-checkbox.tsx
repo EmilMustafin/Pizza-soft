@@ -20,7 +20,7 @@ export const InputCheckbox = forwardRef<HTMLInputElement, IInputCheckboxProps>((
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newChecked = e.target.checked;
     setChecked(newChecked);
-    onChangeProp?.(e); 
+    onChangeProp?.(e);
   };
 
   const getIcon = () => {

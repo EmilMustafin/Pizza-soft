@@ -63,14 +63,7 @@ module.exports = {
   ],
 
   parser: '@typescript-eslint/parser',
-  plugins: [
-    'react-refresh',
-    'react',
-    'react-hooks',
-    '@typescript-eslint',
-    'import',
-    'boundaries',
-  ],
+  plugins: ['react-refresh', 'react', 'react-hooks', '@typescript-eslint', 'import', 'boundaries'],
   parserOptions: {
     project: ['./tsconfig.json'],
     tsconfigRootDir: __dirname,

@@ -1,5 +1,5 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactElement, ReactNode } from 'react';
-import type { IIconProps } from '../..';
+
 
 export interface InputBoxProps {
   children: ReactNode;

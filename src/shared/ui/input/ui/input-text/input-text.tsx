@@ -45,7 +45,7 @@ export const InputText = forwardRef<HTMLInputElement, IInputTextProps>((props, r
     setValue(e.target.value);
     onChangeProp?.(e);
   };
- 
+
   const onFocus = () => setFocus(true);
   const onBlur = () => setFocus(false);
   return (

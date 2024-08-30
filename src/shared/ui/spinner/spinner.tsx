@@ -1,7 +1,7 @@
 import { FC } from 'react';
+import { Icons } from '@/shared/assets';
 import styles from './spinner.module.css';
 import { Icon } from '../icon';
-import { Icons } from '../../assets/icons';
 
 interface ISpinner {
   width?: string;
